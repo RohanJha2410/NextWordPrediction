@@ -6,9 +6,9 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 st.set_page_config(page_title="Next Word Predictor", page_icon="🧠", layout="centered")
 
-model = load_model('next_word_lstm.h5')
+model = load_model('next_word_lstm.h5',compile=False)
 
-with open('tokenizer.pickle', 'rb') as handle:
+with open('tokenizer.pkl', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 def predict_next_word(model, tokenizer, text, max_sequence_len):
